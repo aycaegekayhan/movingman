@@ -18,6 +18,7 @@
 		D9BF3E392733789500BFF812 /* MovingManGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E382733789500BFF812 /* MovingManGameUITestsLaunchTests.swift */; };
 		D9CAA36C2738B8F4009922BF /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36B2738B8F4009922BF /* FirstLevel.sks */; };
 		D9CAA3702738BD9D009922BF /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36F2738BD9D009922BF /* TileSets.sks */; };
+		D9CAA3722738C003009922BF /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA3712738C003009922BF /* SKNode+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D9BF3E492738B27E00BFF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9CAA36B2738B8F4009922BF /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
 		D9CAA36F2738BD9D009922BF /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
+		D9CAA3712738C003009922BF /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				D9BF3E212733789500BFF812 /* LaunchScreen.storyboard */,
 				D9CAA36B2738B8F4009922BF /* FirstLevel.sks */,
 				D9CAA36F2738BD9D009922BF /* TileSets.sks */,
+				D9CAA3712738C003009922BF /* SKNode+Extensions.swift */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9BF3E192733789300BFF812 /* GameScene.swift in Sources */,
+				D9CAA3722738C003009922BF /* SKNode+Extensions.swift in Sources */,
 				D9BF3E1B2733789300BFF812 /* GameViewController.swift in Sources */,
 				D9BF3E132733789300BFF812 /* AppDelegate.swift in Sources */,
 			);
