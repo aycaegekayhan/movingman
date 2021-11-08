@@ -17,7 +17,7 @@
 		D9BF3E372733789500BFF812 /* MovingManGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E362733789500BFF812 /* MovingManGameUITests.swift */; };
 		D9BF3E392733789500BFF812 /* MovingManGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E382733789500BFF812 /* MovingManGameUITestsLaunchTests.swift */; };
 		D9CAA36C2738B8F4009922BF /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36B2738B8F4009922BF /* FirstLevel.sks */; };
-		D9CAA36E2738BAB3009922BF /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36D2738BAB3009922BF /* TileSets.sks */; };
+		D9CAA3702738BD9D009922BF /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36F2738BD9D009922BF /* TileSets.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		D9BF3E382733789500BFF812 /* MovingManGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingManGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9BF3E492738B27E00BFF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9CAA36B2738B8F4009922BF /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
-		D9CAA36D2738BAB3009922BF /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
+		D9CAA36F2738BD9D009922BF /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				D9BF3E1F2733789500BFF812 /* Assets.xcassets */,
 				D9BF3E212733789500BFF812 /* LaunchScreen.storyboard */,
 				D9CAA36B2738B8F4009922BF /* FirstLevel.sks */,
-				D9CAA36D2738BAB3009922BF /* TileSets.sks */,
+				D9CAA36F2738BD9D009922BF /* TileSets.sks */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			files = (
 				D9BF3E1E2733789300BFF812 /* Main.storyboard in Resources */,
 				D9CAA36C2738B8F4009922BF /* FirstLevel.sks in Resources */,
-				D9CAA36E2738BAB3009922BF /* TileSets.sks in Resources */,
+				D9CAA3702738BD9D009922BF /* TileSets.sks in Resources */,
 				D9BF3E202733789500BFF812 /* Assets.xcassets in Resources */,
 				D9BF3E232733789500BFF812 /* LaunchScreen.storyboard in Resources */,
 			);
