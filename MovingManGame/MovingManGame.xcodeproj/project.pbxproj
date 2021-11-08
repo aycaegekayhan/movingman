@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D9BF3E132733789300BFF812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E122733789300BFF812 /* AppDelegate.swift */; };
-		D9BF3E152733789300BFF812 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9BF3E142733789300BFF812 /* GameScene.sks */; };
-		D9BF3E172733789300BFF812 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9BF3E162733789300BFF812 /* Actions.sks */; };
 		D9BF3E192733789300BFF812 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E182733789300BFF812 /* GameScene.swift */; };
 		D9BF3E1B2733789300BFF812 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E1A2733789300BFF812 /* GameViewController.swift */; };
 		D9BF3E1E2733789300BFF812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BF3E1C2733789300BFF812 /* Main.storyboard */; };
@@ -18,6 +16,8 @@
 		D9BF3E2D2733789500BFF812 /* MovingManGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E2C2733789500BFF812 /* MovingManGameTests.swift */; };
 		D9BF3E372733789500BFF812 /* MovingManGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E362733789500BFF812 /* MovingManGameUITests.swift */; };
 		D9BF3E392733789500BFF812 /* MovingManGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BF3E382733789500BFF812 /* MovingManGameUITestsLaunchTests.swift */; };
+		D9CAA36C2738B8F4009922BF /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36B2738B8F4009922BF /* FirstLevel.sks */; };
+		D9CAA36E2738BAB3009922BF /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA36D2738BAB3009922BF /* TileSets.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 /* Begin PBXFileReference section */
 		D9BF3E0F2733789300BFF812 /* MovingManGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovingManGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BF3E122733789300BFF812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9BF3E142733789300BFF812 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		D9BF3E162733789300BFF812 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		D9BF3E182733789300BFF812 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D9BF3E1A2733789300BFF812 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D9BF3E1D2733789300BFF812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +50,9 @@
 		D9BF3E322733789500BFF812 /* MovingManGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovingManGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BF3E362733789500BFF812 /* MovingManGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingManGameUITests.swift; sourceTree = "<group>"; };
 		D9BF3E382733789500BFF812 /* MovingManGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingManGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9BF3E492738B27E00BFF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D9CAA36B2738B8F4009922BF /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
+		D9CAA36D2738BAB3009922BF /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +103,15 @@
 		D9BF3E112733789300BFF812 /* MovingManGame */ = {
 			isa = PBXGroup;
 			children = (
+				D9BF3E492738B27E00BFF812 /* Info.plist */,
 				D9BF3E122733789300BFF812 /* AppDelegate.swift */,
-				D9BF3E142733789300BFF812 /* GameScene.sks */,
-				D9BF3E162733789300BFF812 /* Actions.sks */,
 				D9BF3E182733789300BFF812 /* GameScene.swift */,
 				D9BF3E1A2733789300BFF812 /* GameViewController.swift */,
 				D9BF3E1C2733789300BFF812 /* Main.storyboard */,
 				D9BF3E1F2733789500BFF812 /* Assets.xcassets */,
 				D9BF3E212733789500BFF812 /* LaunchScreen.storyboard */,
+				D9CAA36B2738B8F4009922BF /* FirstLevel.sks */,
+				D9CAA36D2738BAB3009922BF /* TileSets.sks */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -236,10 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9BF3E1E2733789300BFF812 /* Main.storyboard in Resources */,
-				D9BF3E152733789300BFF812 /* GameScene.sks in Resources */,
+				D9CAA36C2738B8F4009922BF /* FirstLevel.sks in Resources */,
+				D9CAA36E2738BAB3009922BF /* TileSets.sks in Resources */,
 				D9BF3E202733789500BFF812 /* Assets.xcassets in Resources */,
 				D9BF3E232733789500BFF812 /* LaunchScreen.storyboard in Resources */,
-				D9BF3E172733789300BFF812 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,11 +448,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovingManGame/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,11 +479,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovingManGame/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
