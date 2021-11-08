@@ -27,7 +27,24 @@ extension SKNode {
         } else {
             return nil
         }
-        
     }
     
+    func scale(to screenSize: CGSize, width: Bool, multiplier: CGFloat){ //METHOD TO SCALE A CERTAIN OBJECT(SKNODE), SCALE THE SKNODE DEPENDING ON OTHER NODES SIZE
+        
+        let scale = width ? (screenSize.width * multiplier) / self.frame.size.width : (screenSize.height * multiplier) / self.frame.size.width
+        self.setScale(scale)
+    }
+    
+    func turnGravity(on value: Bool) {
+        physicsBody?.affectedByGravity = value // this method allows gravity of certain physics body on and off
+    }
+    
+    func createUserData(entry: Any, forKey key: String) { // inside of a sknode this method will keep certain data
+        
+        if userData == nil {
+            let userDataDictionary = NSMutableDictionary()
+            userData = userDataDictionary
+        }
+        userData!.setValue(entry, forKey: key)
+    }
 }
