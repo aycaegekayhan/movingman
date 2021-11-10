@@ -19,7 +19,7 @@ public func += (left: inout CGPoint, right: CGPoint) {
     left = left + right
 }
 
-class Laye: SKNode {
+class Layer: SKNode {
     
     var layerVelocity = CGPoint.zero
     
