@@ -23,6 +23,8 @@ class GameScene: SKScene {
     
     var gameState = GameState.ready
     
+    var player: Player!
+    
     override func didMove(to view: SKView) {
         createLayers()
     }
@@ -64,6 +66,18 @@ class GameScene: SKScene {
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0) //frame.size -> entire size of the sceene, adjust the size according to size
         }
+        
+        addPlayer() //load level -> load tile map -> load player
+        
+    }
+    
+    func addPlayer() {
+        player = Player(imageNamed: GameConstants.StringConstants.playerImageName)
+        player.scale(to: frame.size, width: false, multiplier: 0.1)
+        player.name = GameConstants.StringConstants.playerName
+        player.position = CGPoint(x: frame.midX/2.0, y: frame.midY) // position the player in the first quadrant of the screen
+        player.zPosition = GameConstants.ZPositions.playerZ
+        addChild(player)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //called when there is a touch on the screen
