@@ -23,6 +23,7 @@
 		D9CAA3762743599C009922BF /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA3752743599C009922BF /* RepeatingLayer.swift */; };
 		D9CAA37827435FB1009922BF /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37727435FB1009922BF /* GameConstants.swift */; };
 		D9CAA37A274365F4009922BF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA379274365F4009922BF /* Player.swift */; };
+		D9CAA37C274444FF009922BF /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37B274444FF009922BF /* PhysicsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D9CAA3752743599C009922BF /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		D9CAA37727435FB1009922BF /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		D9CAA379274365F4009922BF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D9CAA37B274444FF009922BF /* PhysicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				D9CAA3752743599C009922BF /* RepeatingLayer.swift */,
 				D9CAA37727435FB1009922BF /* GameConstants.swift */,
 				D9CAA379274365F4009922BF /* Player.swift */,
+				D9CAA37B274444FF009922BF /* PhysicsHelper.swift */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				D9CAA37827435FB1009922BF /* GameConstants.swift in Sources */,
 				D9BF3E132733789300BFF812 /* AppDelegate.swift in Sources */,
 				D9CAA3762743599C009922BF /* RepeatingLayer.swift in Sources */,
+				D9CAA37C274444FF009922BF /* PhysicsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
