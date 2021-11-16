@@ -29,14 +29,16 @@ class GameScene: SKScene {
     
     func createLayers() {
         worldLayer = Layer()
+        worldLayer.zPosition = GameConstants.ZPositions.worldZ
         addChild(worldLayer)
         worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
         
         backGroundLayer = RepeatingLayer()
+        backGroundLayer.zPosition = GameConstants.ZPositions.farBGZ
         addChild(backGroundLayer) //adding direct child to our game scene
         
         for i in 0...1 { // for loop will run twice
-            let backgroundImage = SKSpriteNode(imageNamed: "DesertBackground")
+            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[0])
             backgroundImage.name = String(i)
             backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0) //scale the background to screen
             backgroundImage.anchorPoint = CGPoint.zero
@@ -58,7 +60,7 @@ class GameScene: SKScene {
     }
     
     func loadTileMap() {
-        if let groundTiles = mapNode.childNode(withName: "Ground Tiles") as? SKTileMapNode{ // if get a value for ground tiles it will be sktilemapnode
+        if let groundTiles = mapNode.childNode(withName: GameConstants.StringConstants.groundTilesName) as? SKTileMapNode{ // if get a value for ground tiles it will be sktilemapnode
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0) //frame.size -> entire size of the sceene, adjust the size according to size
         }
