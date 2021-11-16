@@ -21,6 +21,7 @@
 		D9CAA3722738C003009922BF /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA3712738C003009922BF /* SKNode+Extensions.swift */; };
 		D9CAA374273B0AEB009922BF /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA373273B0AEB009922BF /* Layer.swift */; };
 		D9CAA3762743599C009922BF /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA3752743599C009922BF /* RepeatingLayer.swift */; };
+		D9CAA37827435FB1009922BF /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37727435FB1009922BF /* GameConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D9CAA3712738C003009922BF /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		D9CAA373273B0AEB009922BF /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		D9CAA3752743599C009922BF /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
+		D9CAA37727435FB1009922BF /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				D9CAA3712738C003009922BF /* SKNode+Extensions.swift */,
 				D9CAA373273B0AEB009922BF /* Layer.swift */,
 				D9CAA3752743599C009922BF /* RepeatingLayer.swift */,
+				D9CAA37727435FB1009922BF /* GameConstants.swift */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				D9CAA3722738C003009922BF /* SKNode+Extensions.swift in Sources */,
 				D9CAA374273B0AEB009922BF /* Layer.swift in Sources */,
 				D9BF3E1B2733789300BFF812 /* GameViewController.swift in Sources */,
+				D9CAA37827435FB1009922BF /* GameConstants.swift in Sources */,
 				D9BF3E132733789300BFF812 /* AppDelegate.swift in Sources */,
 				D9CAA3762743599C009922BF /* RepeatingLayer.swift in Sources */,
 			);

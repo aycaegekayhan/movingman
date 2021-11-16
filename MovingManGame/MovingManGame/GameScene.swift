@@ -14,6 +14,7 @@ enum GameState {
 class GameScene: SKScene {
     
     var worldLayer: Layer!
+    var backGroundLayer = RepeatingLayer!
     var mapNode : SKNode!
     var tileMap :SKTileMapNode!
     
@@ -30,6 +31,21 @@ class GameScene: SKScene {
         worldLayer = Layer()
         addChild(worldLayer)
         worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
+        
+        backGroundLayer = RepeatingLayer()
+        addChild(backGroundLayer) //adding direct child to our game scene
+        
+        for i in 0...1 { // for loop will run twice
+            let backgroundImage = SKSpriteNode(imageNamed: "DesertBackground")
+            backgroundImage.name = String(i)
+            backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0) //scale the background to screen
+            backgroundImage.anchorPoint = CGPoint.zero
+            backgroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * backgroundImage.size.width, y: 0.0)
+            backGroundLayer.addChild(backgroundImage)
+        }
+        
+        backGroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
+        
         load(level: "First Level")
     }
     
@@ -75,6 +91,7 @@ class GameScene: SKScene {
         
         if gameState == .ongoing { // only move the map if the game has begun
             worldLayer.update(dt)
+            backGroundLayer.update(dt)
         }
         
     }
