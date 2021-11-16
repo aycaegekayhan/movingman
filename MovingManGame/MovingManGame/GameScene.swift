@@ -14,7 +14,7 @@ enum GameState {
 class GameScene: SKScene {
     
     var worldLayer: Layer!
-    var backGroundLayer = RepeatingLayer!
+    var backGroundLayer: RepeatingLayer!
     var mapNode : SKNode!
     var tileMap :SKTileMapNode!
     
