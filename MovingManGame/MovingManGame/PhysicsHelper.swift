@@ -18,6 +18,10 @@ class PhysicsHelper {
         default:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size) // add generic rectangle size
         }
+    }
+    
+    static func addPhysicBody(to tileMap: SKTileMapNode, and tileInfo: String) {
         
     }
+    
 }
