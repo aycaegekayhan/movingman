@@ -117,6 +117,19 @@ class GameScene: SKScene {
         }
         
     }
+    
+    override func didSimulatePhysics() {
+        //track position of the player
+        for node in tileMap[GameConstants.StringConstants.groundNodeName] {
+            if let groundNode = node as? GroundNode { //check if there is a ground node
+                let groundY = (groundNode.position.y + groundNode.size.height) * tileMap.yScale // top edge of the ground node
+                let playerY = player.position.y - player.size.height/3 //minimal space between player and ground
+                groundNode.isBodyActivated = playerY > groundY // y position of the player bigger than y position of the ground physics body gets activated
+                
+            }
+        }
+    }
+    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
