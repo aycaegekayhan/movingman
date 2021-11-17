@@ -26,8 +26,10 @@ class GameScene: SKScene {
             switch newValue {
             case .ongoing:
                 player.state = .running
+                pauseEnemies(bool: false)
             case .finished:
                 player.state = .idle
+                pauseEnemies(bool: true) // enemies will stop their actions
             default:
                 break
             }
@@ -148,6 +150,12 @@ class GameScene: SKScene {
     
     func handleEnemyContact() {
         die(reason: 0)
+    }
+    
+    func pauseEnemies(bool: Bool) {
+        for enemy in tileMap[GameConstants.StringConstants.enemyName] {
+            enemy.isPaused = bool
+        }
     }
     
     func die(reason: Int) {
