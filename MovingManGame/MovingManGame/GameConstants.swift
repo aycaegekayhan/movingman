@@ -25,6 +25,18 @@ struct GameConstants {
         static let playerName = "Player" //will be assigned node of the player class to identify them
         static let playerImageName = "Idle_0"
         static let groundNodeName = "GroundNode"
+        
+        static let playerIdleAtlas = "Player Idle Atlas"
+        static let playerRunAtlas = "Player Run Atlas"
+        static let playerJumpAtlas = "Player Jump Atlas"
+        static let playerDieAtlas = "Player Die Atlas"
+        static let idlePrefixKey = "Idle_"
+        static let runPrefixKey = "Run_"
+        static let jumpPrefixKey = "Jump_"
+        static let diePrefixKey = "Die_"
+        
+        static let jumpUpActionKey = "JumpUp"
+        static let brakeDescendActionKey = "BrakeDescend"
     }
     
 }

@@ -21,7 +21,18 @@ class GameScene: SKScene {
     var lastTime: TimeInterval = 0
     var dt: TimeInterval = 0
     
-    var gameState = GameState.ready
+    var gameState = GameState.ready {
+        willSet {
+            switch newValue {
+            case .ongoing:
+                player.state = .running
+            case .finished:
+                player.state = .idle
+            default:
+                break
+            }
+        }
+    }
     
     var player: Player!
     
@@ -83,7 +94,14 @@ class GameScene: SKScene {
         PhysicsHelper.addPhysicsBody(to: player, with: player.name!)
         player.position = CGPoint(x: frame.midX/2.0, y: frame.midY) // position the player in the first quadrant of the screen
         player.zPosition = GameConstants.ZPositions.playerZ
+        player.loadTextures() //to load the frames
+        player.state = .idle
         addChild(player)
+        addPlayerActions()
+    }
+    
+    func addPlayerActions() {
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //called when there is a touch on the screen
