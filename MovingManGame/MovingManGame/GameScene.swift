@@ -101,6 +101,17 @@ class GameScene: SKScene {
     }
     
     func addPlayerActions() {
+        let up = SKAction.moveBy(x: 0.0, y: frame.size.height/4, duration: 0.4) //jump quarter of the screens height
+        up.timingMode = .easeOut // action slow down towards the end
+        
+        player.createUserData(entry: up, forKey: GameConstants.StringConstants.jumpUpActionKey)
+    }
+    
+    func jump() { //function to make player actually jump
+        player.turnGravity(on: false)
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey) as! SKAction) {
+            self.player.turnGravity(on: true)
+        }
         
     }
     
@@ -108,6 +119,8 @@ class GameScene: SKScene {
         switch gameState {
         case .ready:
             gameState = .ongoing // if clicked on the screen when game state is ready
+        case .ongoing: //when game runs
+            jump()
         default:
             break
         }
