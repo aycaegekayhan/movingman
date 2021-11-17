@@ -142,6 +142,27 @@ class GameScene: SKScene {
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction)
     }
     
+    func handleEnemyContact() {
+        die(reason: 0)
+    }
+    
+    func die(reason: Int) {
+        gameState = .finished
+        turnGravity(on: false)
+        let deathAnimation: SKAction!
+        switch reason {
+        case 0:
+            deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        default:
+            deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        }
+        
+        player.run(deathAnimation) {
+            self.player.removeFromParent() // to remove player sprite from the scene
+        }
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //called when there is a touch on the screen
         switch gameState {
         case .ready:
@@ -209,7 +230,8 @@ extension GameScene: SKPhysicsContactDelegate {
             brake = false // to use it again next jumps
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.finishCategory: //will be called when player hits the finish line
             gameState = .finished
-            
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.enemyCategory:
+            handleEnemyContact()
         default:
             break
         }
