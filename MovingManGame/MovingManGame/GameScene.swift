@@ -38,6 +38,8 @@ class GameScene: SKScene {
     
     var touch = false
     
+    var brake = false
+    
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -107,6 +109,12 @@ class GameScene: SKScene {
         up.timingMode = .easeOut // action slow down towards the end
         
         player.createUserData(entry: up, forKey: GameConstants.StringConstants.jumpUpActionKey)
+    
+        let move = SKAction.moveBy(x: 0.0, y: player.size.height, duration: 0.4)
+        let jump = SKAction.animate(with: player.jumpFrames, timePerFrame: 0.4/Double(player.jumpFrames.count)) // time: one animation loop strecth through 0.4 seconds
+        let group = SKAction.group([move, jump]) // perform all passed actions at the same time
+        
+        player.createUserData(entry: group, forKey: GameConstants.StringConstants.brakeDescendActionKey) // save the actions to the player
     }
     
     func jump() { //function to make player actually jump
@@ -122,6 +130,13 @@ class GameScene: SKScene {
         
     }
     
+    func brakeDescend() {
+        brake = true // to make the movement once per jump
+        player.physicsBody!.velocity.dy = 0.0 // current speed of the player in the y direction and cancel out the current momentum
+    
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //called when there is a touch on the screen
         switch gameState {
         case .ready:
@@ -130,6 +145,8 @@ class GameScene: SKScene {
             touch = true
             if !player.airborne {
                 jump()
+            } else if !brake {
+                brakeDescend()
             }
         default:
             break
@@ -184,6 +201,7 @@ extension GameScene: SKPhysicsContactDelegate {
         switch contactMask {
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory: // contact between player and ground
             player.airborne = false
+            brake = false // to use it again next jumps
         default:
             break
         }
