@@ -95,13 +95,13 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
-        <#code#>
-    }
+    //override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+        
+    //}
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
-        <#code#>
-    }
+    //override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+        
+    //}
     
     override func update(_ currentTime: TimeInterval) {
         if lastTime > 0 {

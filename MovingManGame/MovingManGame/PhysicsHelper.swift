@@ -21,7 +21,32 @@ class PhysicsHelper {
     }
     
     static func addPhysicBody(to tileMap: SKTileMapNode, and tileInfo: String) {
+        let tileSize = tileMap.tileSize // how big the tiles in the map
         
+        for row in 0..<tileMap.numberOfRows {
+            var tiles = [Int]() //created an integer array, to save all the indexes of tiles which is labeled as ground tile
+            for col in 0..<tileMap.numberOfColumns {
+                let tileDefinition = tileMap.tileDefinition(atColumn: col, row: row)
+                let isUsedTile = tileDefinition?.userData?[tileInfo] as? Bool
+                if (isUsedTile ?? false) {
+                    tiles.append(1)
+                } else {
+                    tiles.append(0)
+                }
+            }
+            if tiles.contains(1) {
+                var platform = [Int]()
+                for (index, tile) in tiles.enumerated() {
+                    if tile == 1 && index < (tileMap.numberOfColumns - 1) {
+                        platform.append(index)
+                    } else if !platform.isEmpty {
+                        print(platform)
+                        platform.removeAll()
+                    }
+                    
+                }
+            }
+        }
     }
     
 }
