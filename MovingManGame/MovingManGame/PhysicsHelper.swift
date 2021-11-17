@@ -18,6 +18,9 @@ class PhysicsHelper {
             sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.playerCategory
             sprite.physicsBody!.collisionBitMask = GameConstants.PhysicsCategories.groundCategory | GameConstants.PhysicsCategories.finishCategory // to collide with the finish line
             sprite.physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.allCategory // check the players contact with the other elements of the game
+        case GameConstants.StringConstants.finishLineName:
+            sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+            sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.finishCategory
         default:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size) // add generic rectangle size
         }

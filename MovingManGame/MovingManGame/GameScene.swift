@@ -87,7 +87,7 @@ class GameScene: SKScene {
             PhysicsHelper.addPhysicBody(to: tileMap, and: "ground") // specify the user data info
             for child in groundTiles.children {
                 if let sprite = child as? SKSpriteNode, sprite.name != nil {
-                    
+                    ObjectHelper.handleChild(sprite: sprite, with: sprite.name!)
                 }
             }
         }
@@ -207,6 +207,9 @@ extension GameScene: SKPhysicsContactDelegate {
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory: // contact between player and ground
             player.airborne = false
             brake = false // to use it again next jumps
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.finishCategory: //will be called when player hits the finish line
+            gameState = .finished
+            
         default:
             break
         }
