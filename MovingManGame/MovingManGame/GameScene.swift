@@ -45,6 +45,10 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
         
+        physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: frame.minX, y: frame.minY), to: CGPoint(x: frame.maxX, y: frame.minY))
+        physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.frameCategory
+        physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.playerCategory
+        
         createLayers()
     }
     
@@ -153,6 +157,11 @@ class GameScene: SKScene {
         switch reason {
         case 0:
             deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        case 1:
+            let up = SKAction.moveTo(y: frame.midY, duration: 0.25)
+            let wait = SKAction.wait(forDuration: 0.1)
+            let down = SKAction.moveTo(y: -player.size.height, duration: 0.2)
+            deathAnimation = SKAction.sequence([up, wait, down])
         default:
             deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
         }
@@ -232,6 +241,9 @@ extension GameScene: SKPhysicsContactDelegate {
             gameState = .finished
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.enemyCategory:
             handleEnemyContact()
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.frameCategory:
+            physicsBody = nil // to prevent die function to work again
+            die(reason: 1)
         default:
             break
         }
