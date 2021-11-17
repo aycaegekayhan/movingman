@@ -23,6 +23,8 @@ class Player: SKSpriteNode {
             animate(for: newValue)
         }
     }
+    
+    var airborne = false // check if player is already in the air
 
     func loadTextures() { //initialization of the 4 properties of the character
         idleFrames = AnimationHelper.loadTextures(from: SKTextureAtlas(named: GameConstants.StringConstants.playerIdleAtlas), withName: GameConstants.StringConstants.idlePrefixKey) // load the frames into the array

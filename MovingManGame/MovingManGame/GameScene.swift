@@ -108,6 +108,7 @@ class GameScene: SKScene {
     }
     
     func jump() { //function to make player actually jump
+        player.airborne = true // make the player unable to jump more
         player.turnGravity(on: false)
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey) as! SKAction) {
             self.player.turnGravity(on: true)
@@ -119,8 +120,10 @@ class GameScene: SKScene {
         switch gameState {
         case .ready:
             gameState = .ongoing // if clicked on the screen when game state is ready
-        case .ongoing: //when game runs
-            jump()
+        case .ongoing: //when game runs jump everytime tapped as long as game state is ongoing and airborne is false
+            if !player.airborne {
+                jump()
+            }
         default:
             break
         }
