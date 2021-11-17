@@ -40,8 +40,15 @@ class PhysicsHelper {
                     if tile == 1 && index < (tileMap.numberOfColumns - 1) {
                         platform.append(index)
                     } else if !platform.isEmpty {
-                        print(platform)
+                        //position of ground node
+                        let x = CGFloat(platform[0]) * tileSize.width //first index of the platform * width of tiles
+                        let y = CGFloat(row) * tileSize.height
+                        let tileNode = GroundNode(with: CGSize(width: tileSize.width * CGFloat(platform.count), height: tileSize.height))
+                        tileNode.position = CGPoint(x: x, y: y)
+                        tileNode.anchorPoint = CGPoint.zero
+                        tileMap.addChild(tileNode)
                         platform.removeAll()
+                        
                     }
                     
                 }
