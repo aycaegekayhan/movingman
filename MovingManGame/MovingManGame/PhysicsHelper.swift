@@ -15,6 +15,9 @@ class PhysicsHelper {
             sprite.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: sprite.size.width/2, height: sprite.size.height)) //cretated a rectangle for physics body
             sprite.physicsBody!.restitution = 0.0 // player will not bounce back when it hits another physics body
             sprite.physicsBody!.allowsRotation = false // player will stay staright up
+            sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.playerCategory
+            sprite.physicsBody!.collisionBitMask = GameConstants.PhysicsCategories.groundCategory | GameConstants.PhysicsCategories.finishCategory // to collide with the finish line
+            sprite.physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.allCategory // check the players contact with the other elements of the game
         default:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size) // add generic rectangle size
         }

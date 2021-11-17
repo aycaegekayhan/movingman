@@ -36,6 +36,8 @@ class GameScene: SKScene {
     
     var player: Player!
     
+    var touch = false
+    
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -111,7 +113,11 @@ class GameScene: SKScene {
         player.airborne = true // make the player unable to jump more
         player.turnGravity(on: false)
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey) as! SKAction) {
-            self.player.turnGravity(on: true)
+            if self.touch { //to make the double jump
+                self.player.run(self.player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey) as! SKAction, completion: {
+                    self.player.turnGravity(on: true)
+                })
+            }
         }
         
     }
@@ -121,6 +127,7 @@ class GameScene: SKScene {
         case .ready:
             gameState = .ongoing // if clicked on the screen when game state is ready
         case .ongoing: //when game runs jump everytime tapped as long as game state is ongoing and airborne is false
+            touch = true
             if !player.airborne {
                 jump()
             }
@@ -129,13 +136,17 @@ class GameScene: SKScene {
         }
     }
     
-    //override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+        touch = false
+        player.turnGravity(on: true)
         
-    //}
+    }
     
-    //override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { // touch of the screen stops
+        touch = false
+        player.turnGravity(on: true)
         
-    //}
+    }
     
     override func update(_ currentTime: TimeInterval) {
         if lastTime > 0 {
@@ -167,5 +178,25 @@ class GameScene: SKScene {
 }
 
 extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) { //called when the contact begins
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask // get 2 bodies of two nodes having contact, then create a contact mask
+        
+        switch contactMask {
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory: // contact between player and ground
+            player.airborne = false
+        default:
+            break
+        }
+    }
     
+    func didEnd(_ contact: SKPhysicsContact) { // called when contact ends
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch contactMask {
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory:
+            player.airborne = true // if player falls it will not be able to jump
+        default:
+            break
+        }
+    }
 }

@@ -10,6 +10,19 @@ import CoreGraphics
 
 struct GameConstants {
     
+    struct PhysicsCategories {
+        //created bit masks to compare with bit operators and react to contact
+        static let noCategory: UInt32 = 0 // check physics bodies, no bits of the number are set
+        static let allCategory: UInt32 = UInt32.max // all bits of the number are set
+        static let playerCategory: UInt32 = 0x1
+        static let groundCategory: UInt32 = 0x1 << 1
+        static let finishCategory: UInt32 = 0x1 << 2
+        static let collectibleCategory: UInt32 = 0x1 << 3
+        static let enemyCategory: UInt32 = 0x1 << 4
+        static let friendCategory: UInt32 = 0x1 << 5
+        static let ceilingCategory: UInt32 = 0x1 << 6
+    }
+    
     struct ZPositions {
         static let farBGZ: CGFloat = 0
         static let closeBGZ: CGFloat = 1 //higher set positions will be displayed in front of the lower ones
