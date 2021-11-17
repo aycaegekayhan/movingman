@@ -26,6 +26,7 @@
 		D9CAA37C274444FF009922BF /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37B274444FF009922BF /* PhysicsHelper.swift */; };
 		D9CAA37E27447C7F009922BF /* GroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37D27447C7F009922BF /* GroundNode.swift */; };
 		D9CAA38027448EC4009922BF /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA37F27448EC4009922BF /* AnimationHelper.swift */; };
+		D9CAA3822744B06F009922BF /* ObjectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CAA3812744B06F009922BF /* ObjectHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		D9CAA37B274444FF009922BF /* PhysicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		D9CAA37D27447C7F009922BF /* GroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundNode.swift; sourceTree = "<group>"; };
 		D9CAA37F27448EC4009922BF /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		D9CAA3812744B06F009922BF /* ObjectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				D9CAA37B274444FF009922BF /* PhysicsHelper.swift */,
 				D9CAA37D27447C7F009922BF /* GroundNode.swift */,
 				D9CAA37F27448EC4009922BF /* AnimationHelper.swift */,
+				D9CAA3812744B06F009922BF /* ObjectHelper.swift */,
 			);
 			path = MovingManGame;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				D9CAA3722738C003009922BF /* SKNode+Extensions.swift in Sources */,
 				D9CAA374273B0AEB009922BF /* Layer.swift in Sources */,
 				D9BF3E1B2733789300BFF812 /* GameViewController.swift in Sources */,
+				D9CAA3822744B06F009922BF /* ObjectHelper.swift in Sources */,
 				D9CAA37A274365F4009922BF /* Player.swift in Sources */,
 				D9CAA37827435FB1009922BF /* GameConstants.swift in Sources */,
 				D9CAA38027448EC4009922BF /* AnimationHelper.swift in Sources */,

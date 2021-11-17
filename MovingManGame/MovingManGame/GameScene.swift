@@ -85,6 +85,11 @@ class GameScene: SKScene {
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0) //frame.size -> entire size of the sceene, adjust the size according to size
             PhysicsHelper.addPhysicBody(to: tileMap, and: "ground") // specify the user data info
+            for child in groundTiles.children {
+                if let sprite = child as? SKSpriteNode, sprite.name != nil {
+                    
+                }
+            }
         }
         
         addPlayer() //load level -> load tile map -> load player
