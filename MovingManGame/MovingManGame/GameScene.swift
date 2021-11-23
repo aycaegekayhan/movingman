@@ -16,7 +16,7 @@ class GameScene: SKScene {
     var worldLayer: Layer!
     var backGroundLayer: RepeatingLayer!
     var mapNode : SKNode!
-    var tileMap :SKTileMapNode!
+    var tileMap : SKTileMapNode!
     
     var lastTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -79,7 +79,7 @@ class GameScene: SKScene {
     }
     
     func load(level: String) {
-        if let levelNode = SKNode.unarchiveFroFile(file: level) {
+        if let levelNode = SKNode.unarchiveFromFile(file: level) {
             mapNode = levelNode
             worldLayer.addChild(mapNode) // to add map to game
             loadTileMap() // scale is correct, tile map visible on the screen

@@ -9,14 +9,14 @@ import SpriteKit
 
 extension SKNode {
     
-    class func unarchiveFroFile(file: String) -> SKNode? {
+    class func unarchiveFromFile(file: String) -> SKNode? {
         
         if let path = Bundle.main.path(forResource: file, ofType: "sks") {
             let url = URL(fileURLWithPath: path)
             do{
                 let sceneData = try Data(contentsOf: url, options: .mappedIfSafe) // if it is possible and safe the data will be mapped
                 let archiver = NSKeyedUnarchiver(forReadingWith: sceneData)
-                archiver.setClass(self.classForKeyedArchiver(), forClassName: "SKScene")
+                archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
                 let scene = archiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! SKNode
                 archiver.finishDecoding()
                 return scene
