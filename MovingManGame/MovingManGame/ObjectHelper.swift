@@ -22,7 +22,12 @@ class ObjectHelper {
     }
     
     static func calculateGridWith(rows: Int, columns:Int, parent: SKSpriteNode) {
-        
+        for x in 0..<columns {
+            for y in 0..<rows {
+                let position = CGPoint(x: x, y: y)
+                addCoin(to: parent, at: position, columns: columns)
+            }
+        }
     }
     
     static func addCoin(to parent: SKSpriteNode, at position: CGPoint, columns: Int) {
